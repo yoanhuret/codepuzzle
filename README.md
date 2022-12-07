@@ -1,3 +1,8 @@
-# codepuzzle
+# Scala
 
-<iframe src="https://www.codepuzzle.io/p/DVZN" style="border:5px #eb7a3d solid;" name="myiFrame" scrolling="no" frameborder="1" marginheight="-20px" marginwidth="0px" height="1000px" width="1000px" allowfullscreen></iframe>
+<a href="https://yoanhuret.github.io/codepuzzle/FEDINV-SCALA-1.html">Easy</a>
+<a href="https://yoanhuret.github.io/codepuzzle/FEDINV-SCALA-2.html">Medium</a>
+<a href="https://yoanhuret.github.io/codepuzzle/FEDINV-SCALA-3.html">Hard</a>
+
+# TypeScript
+
