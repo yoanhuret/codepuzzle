@@ -21,35 +21,29 @@
             display: block;
             text-align: center;
         }
+        a {
+            color: white;
+        }
     </style>
 </head>
 
 <body>
     <a id="top"></a>
     <header id="docs-navbar" class="d-print-none">
-        <!-- <div class="navbar navbar-dark bg-dark navbar-expand supra">
-        <div class="d-flex flex-row-reverse container-lg">
-            <nav role="navigation" id="nav-lang" aria-label="A propos et changement de langue">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                <a href="https://a11y-guidelines.orange.com/fr/web/audit-wcag/" id="link-about" target="_blank"
-                    title="À propos (nouvelle fenêtre)" class="nav-link">
-                    <span id="link-about-txt">À propos</span>
-                </a>
-            </ul>
-            </nav>
-        </div>
-        </div> -->
-        <nav class="navbar navbar-dark bg-dark navbar-expand-md flex-wrap" role="navigation">
-        <div class="container navbar-nav w-100">
-            <a class="navbar-brand" href="/">
-            <img src="https://cdn.jsdelivr.net/npm/boosted@4.4.1/dist/img/orange_logo.svg" alt="" width="50" height="50">
-            <span class="h2">
-                <span id="title">Federated Inventory Puzzles</span><br>
-                <h1 class="small text-primary m-0" id="auditNameWcag"></h1>
-            </span>
-            </a>          
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <div class="navbar-brand">
+                    <img src="https://cdn.jsdelivr.net/npm/boosted@4.4.1/dist/img/orange_logo.svg" alt="" width="50" height="50">
+                    <span class="h2">
+                        <span id="title">Federated Inventory Puzzles</span><br>
+                    </span>
+                </div>
+                <div class="navbar align-items-end" id="navbarSupportedContent">
+                    <form class="d-flex navbar-item ms-3" role="search">
+                        <span>Just a wrapper of <a href="https://www.codepuzzle.io/" target="_blank" rel="noopener noreferrer">codepuzzle.io</a></span>
+                    </form>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -96,28 +90,26 @@
 
         <!-- Modal -->
         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <!-- <div class="modal-dialog modal-xl modal-dialog-scrollable"> -->
             <div class="modal-dialog modal-fullscreen modal-dialog-scrollable">
-            <!-- <div class="modal-dialog modal-xl"> -->
-            <div class="modal-content">
-                <div class="modal-header">
-                <h1 class="modal-title h5" id="staticBackdropLabel">Let's solve this!</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"><span class="visually-hidden">Close</span></button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title h5" id="staticBackdropLabel">Let's solve this!</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"><span class="visually-hidden">Close</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <iframe src="https://www.codepuzzle.io/p/3SLN"
+                            loading="lazy"
+                            name="myiFrame"
+                            scrolling="yes"
+                            height="115%"
+                            width="90%"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                <div class="modal-body">
-                    <iframe src="https://www.codepuzzle.io/p/3SLN" 
-                        name="myiFrame" 
-                        scrolling="yes" 
-                        height="115%" 
-                        width="90%" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <!-- <button type="button" class="btn btn-primary">Understood</button> -->
-                </div>
-            </div>
             </div>
         </div>
 
@@ -128,26 +120,38 @@
         <div class="o-footer-body">
         <div class="container navbar-dark py-3">
             <div class="row navbar-nav">
-
+                <span>Just a wrapper of <a href="https://www.codepuzzle.io/" target="_blank" rel="noopener noreferrer">codepuzzle.io</a></span>
             </div>
         </div>
         </div>
     </footer>
 
-    <nav id="nav-back-to-top" aria-label="Retour en haut de la page" class="back-to-top">
-        <a id="link-to-top" href="#top" class="back-to-top-link btn btn-icon btn-secondary" title="Retour en haut de la page">
-        </a>
-    </nav>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/boosted@5.1.3/dist/js/boosted.min.js" integrity="sha384-mBRgv/ye1bG9U6wfppOiHvHVz1KlD7VdRcVZLfOCoQkohsL9P61pQxzobjI4XxNr" crossorigin="anonymous"></script>
     <script type="text/javascript">
-        const myModal = document.getElementById('staticBackdrop')
+        //const myModal = document.getElementById('staticBackdrop')
+        const myModal = document.querySelector('#staticBackdrop')
+        const modalIframe = myModal.querySelector('.modal-body iframe')
+        let isLoading;
         myModal.addEventListener('show.bs.modal', event => {
+            isLoading = true
+            modalIframe.src = 'about:blank'
+        })
+        myModal.addEventListener('shown.bs.modal', event => {
             const button = event.relatedTarget
             const puzzleCode = button.getAttribute('data-bs-whatever')
-            const modalIframe = myModal.querySelector('.modal-body iframe')
             modalIframe.src = `https://www.codepuzzle.io/p/${puzzleCode}`
+            currentSrc = `https://www.codepuzzle.io/p/${puzzleCode}`
         })
+        modalIframe.addEventListener('load', event => {
+            if (!isLoading) {
+                $("#staticBackdrop").modal('hide')
+            }
+            if (modalIframe.src !== 'about:blank') {
+                isLoading = false
+            }
+        });
     </script>
 </body>
 
